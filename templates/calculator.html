@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+</head>
+<body>
+
+        <h2>Calculator</h2>
+        {% if result %}
+            <p>Result: {{ result }}</p>
+        {% endif %}
+        <form method="POST" action="/calculator">
+            <label for="num1">Number 1:</label>
+            <input type="number" id="num1" name="num1" required><br><br>
+            <label for="num2">Number 2:</label>
+            <input type="number" id="num2" name="num2" required><br><br>
+            <label for="operator">Operator:</label>
+            <select id="operator" name="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select><br><br>
+            <input type="checkbox" id="save_history" name="save_history">
+            <label for="save_history">Save Calculation History</label><br><br>
+            <input type="submit" value="Calculate">
+        </form>
+</body>
+</html>

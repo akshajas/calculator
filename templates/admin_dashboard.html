@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+ 
+        <h2>Admin Dashboard</h2>
+        {% for username, history in history.items() %}
+            <h3>{{ username }}'s Calculation History</h3>
+            <table>
+                <tr>
+                    <th>Number 1</th>
+                    <th>Number 2</th>
+                    <th>Operator</th>
+                    <th>Result</th>
+                </tr>
+                {% for calculation in history %}
+                    <tr>
+                        <td>{{ calculation['num1'] }}</td>
+                        <td>{{ calculation['num2'] }}</td>
+                        <td>{{ calculation['operator'] }}</td>
+                        <td>{{ calculation['result'] }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endfor %}
+</body>
+</html>
